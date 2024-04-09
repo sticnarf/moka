@@ -655,6 +655,9 @@ where
 
             // We have got a `TrySendError::Full` above. Wait a moment and try again.
 
+            // Yield in case other `run_pending_tasks` cannot be scheduled by runtime.
+            tokio::task::yield_now().await;
+
             if spin_loop_attempts < 4 {
                 spin_loop_attempts += 1;
                 // Wastes some CPU time with a hint to indicate to the CPU that we

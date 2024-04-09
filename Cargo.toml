@@ -55,6 +55,7 @@ smallvec = "1.8"
 tagptr = "0.2"
 thiserror = "1.0"
 uuid = { version = "1.1", features = ["v4"] }
+tokio = { version = "1", features = ["rt"] }
 
 # Opt-out serde and stable_deref_trait features
 # https://github.com/Manishearth/triomphe/pull/5
